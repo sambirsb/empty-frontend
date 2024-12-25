@@ -1,0 +1,25 @@
+{
+  "name": "frontend-2",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev --filter=@repo/dashboard",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "g:package": "turbo gen workspace --name=@repo/$name --copy=example --destination=packages/$name --type=package",
+    "g:app": "turbo gen workspace --name=@repo/$name --copy=example-app --destination=apps/$name --type=app"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.3.3",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.1.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
